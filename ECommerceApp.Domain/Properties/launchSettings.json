@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "ECommerceApp.Domain": {
+      "commandName": "Project"
+    },
+    "Профиль 1": {
+      "commandName": "Project"
+    }
+  }
+}

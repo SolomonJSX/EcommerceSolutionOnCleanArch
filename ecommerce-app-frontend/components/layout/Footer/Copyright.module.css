@@ -1,0 +1,26 @@
+/* src/components/layout/Copyright/Copyright.module.css */
+
+.copyright_section {
+    width: 100%;
+    background-color: #252525;
+    padding: 10px 0; /* Добавил небольшой отступ для красоты */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Тонкая линия разделения с футером */
+}
+
+.copyright_text {
+    width: 100%;
+    color: #ffffff;
+    text-align: center;
+    font-size: 16px;
+    margin: 20px 0px;
+}
+
+.copyright_text a {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.copyright_text a:hover {
+    color: #f26522;
+    text-decoration: none;
+}

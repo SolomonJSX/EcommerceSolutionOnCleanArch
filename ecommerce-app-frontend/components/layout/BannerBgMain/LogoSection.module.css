@@ -1,0 +1,18 @@
+﻿/* src/components/layout/LogoSection/LogoSection.module.css */
+
+.logo_section {
+    width: 100%;
+    /* float: left; - удалено для стабильности в Next.js */
+}
+
+.logo {
+    width: 100%;
+    text-align: center;
+    padding: 30px 0px;
+}
+
+.logo img {
+    /* Ограничиваем максимальную ширину, чтобы логотип не "разрывал" экран */
+    max-width: 100%;
+    height: auto;
+}

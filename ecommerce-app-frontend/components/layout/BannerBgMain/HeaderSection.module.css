@@ -1,0 +1,306 @@
+﻿/* src/components/layout/HeaderSection/HeaderSection.module.css */
+
+.header_section {
+    width: 100%;
+    display: flex;
+}
+
+.containt_main {
+    display: flex;
+    width: 100%;
+    align-items: center; /* Центрирование элементов в ряд */
+}
+
+/* --- SIDE NAV (Боковое меню) --- */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav_open {
+    width: 250px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f26522;
+}
+
+.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    background: none;
+    border: none;
+    color: white;
+}
+
+/* --- ИКОНКИ И ПОИСК --- */
+.toggle_icon {
+    cursor: pointer;
+    color: #ffffff;
+    order: 1;
+}
+
+.main {
+    flex: 1;
+    margin: 0px 30px;
+    display: inline-block;
+    order: 2;
+}
+
+.header_box {
+    order: 3;
+    display: flex;
+    align-items: center;
+}
+
+/* --- ЯЗЫК И МЕНЮ --- */
+.lang_box {
+    display: flex;
+    background: #fff;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.login_menu {
+    display: flex;
+    text-align: right;
+}
+
+.login_menu ul {
+    display: flex; /* Выстраиваем li в ряд */
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 20px; /* Отступ между "Cart" и "Login" */
+}
+
+.login_menu li a {
+    display: flex; /* КЛЮЧЕВОЕ: иконка и текст теперь в ряд */
+    align-items: center; /* Центрируем иконку и текст по вертикали */
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 16px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.login_menu li a:hover {
+    color: #f26522;
+}
+
+.padding_10 {
+    padding-left: 10px; /* Отступ текста от иконки */
+}
+
+/* Контейнер поиска */
+.search_wrapper {
+    display: flex;
+    width: 100%;
+    background: #fff;
+    border-radius: 50px; /* Скругленные края */
+    border: 1px solid #e1e1e1;
+    overflow: hidden; /* Чтобы кнопка не вылезала за радиус */
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Эффект при клике на поиск (фокус) */
+.search_wrapper:focus-within {
+    border-color: #f26522;
+    box-shadow: 0 4px 12px rgba(242, 101, 34, 0.15);
+    transform: translateY(-1px);
+}
+
+/* Поле ввода */
+.search_input {
+    flex: 1;
+    border: none !important;
+    padding: 12px 25px;
+    font-size: 14px;
+    outline: none !important;
+    color: #333;
+    background: transparent;
+}
+
+.search_input::placeholder {
+    color: #aaa;
+}
+
+/* Кнопка поиска */
+.search_button {
+    background-color: #f26522;
+    color: white;
+    padding: 0 25px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search_button:hover {
+    background-color: #d4561c;
+}
+
+.search_button svg {
+    width: 20px;
+    height: 20px;
+}
+
+.auth_container {
+    position: relative; /* Чтобы dropdown позиционировался относительно этого li */
+}
+
+.nav_item {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 0;
+}
+
+.nav_item:hover {
+    color: #f26522;
+}
+
+/* Стили выпадающего меню */
+.auth_dropdown {
+    position: absolute;
+    top: 130%; /* Смещение чуть ниже кнопки */
+    right: 0;
+    background-color: white;
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.dropdown_link {
+    padding: 12px 16px;
+    color: #333 !important;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: left;
+    transition: background 0.3s;
+}
+
+.dropdown_link:hover {
+    background-color: #f8f9aa; /* Светло-желтый или оранжевый при наведении */
+    color: #f26522 !important;
+}
+
+/* Анимация стрелочки */
+.arrow {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.arrow_rotate {
+    transform: rotate(180deg);
+}
+
+/* Элементы внутри Sidenav */
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 2000; /* Чтобы было поверх всего */
+    top: 0;
+    left: 0;
+    background-color: #1a1a1a; /* Чуть мягче, чем чисто черный */
+    overflow-x: hidden;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+}
+
+.sidenav_open {
+    width: 300px; /* Немного шире для удобства */
+}
+
+/* Заголовок меню */
+.sidenav_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 25px;
+    border-bottom: 1px solid #333;
+    margin-bottom: 10px;
+}
+
+.category_title {
+    color: #f26522;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.closebtn {
+    background: none;
+    border: none;
+    color: #818181;
+    font-size: 28px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.closebtn:hover {
+    color: #ffffff;
+    transform: rotate(90deg);
+}
+
+/* Ссылки категорий */
+.category_link {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #e1e1e1;
+    transition: 0.3s;
+    border-left: 3px solid transparent;
+}
+
+.category_link:hover {
+    background-color: #262626;
+    color: #f26522;
+    border-left: 3px solid #f26522;
+    padding-left: 30px; /* Эффект смещения */
+}
+
+.category_icon {
+    width: 20px;
+    color: #f26522;
+    display: flex;
+    justify-content: center;
+}
