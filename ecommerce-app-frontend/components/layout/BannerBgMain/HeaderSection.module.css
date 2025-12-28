@@ -280,7 +280,7 @@
 
 /* Ссылки категорий */
 .category_link {
-    display: flex;
+    display: flex !important;
     align-items: center;
     gap: 15px;
     padding: 12px 25px;
